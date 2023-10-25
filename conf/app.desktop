@@ -1,0 +1,14 @@
+#!/usr/bin/env xdg-open
+
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+X-Created-By=Deepin WINE Team
+Categories=system;
+Icon=deepin.cn.360.yasuo
+Exec="/opt/deepinwine/apps/Deepin-360YaSuo/run.sh" -u %u
+Name=360zip
+Name[zh_CN]=360压缩
+Comment=360zip on Deepin Wine
+StartupWMClass=360zip.exe
+MimeType=
