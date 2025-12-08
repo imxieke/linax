@@ -1,10 +1,8 @@
-  * `d3d9-nine.dll`: Gallium Nine Direct3D 9 library
-  * `ninewinecfg.exe`: GUI to enable/disable Gallium Nine with some additional info about the current state
-  * archlinux `pacman -S wine-nine`
-
 ## 运行 msi
 
 `wine msiexec /i whatever.msi`
+
+wine winepath -u 'c:\windows\system32'
 
 ## 注册表
 ### 删除注册表
@@ -13,21 +11,6 @@ reg DELETE {REG} /f
 control
 uninstaller
 C:\windows\system32\taskmgr.exe
-
-- Plyonlinux
-- Bottles
-- [lutris](https://github.com/lutris/lutris)
-- https://appdb.winehq.org/
-- https://github.com/simons-public/protonfixes
-- https://github.com/ValveSoftware/steam-audio
-- https://github.com/ValveSoftware/steam-runtime
-- https://github.com/ValveSoftware/GameNetworkingSockets
-
-## Wine Build Release
-- https://github.com/ValveSoftware/Proton
-- https://github.com/lutris/wine 7.2-2
-- https://github.com/adolfintel/wined3d4win Build Script
-- https://github.com/AXErunners/electrum-axe-winebuild Build
 
 ## Wine Command
 - cmd
@@ -104,24 +87,95 @@ statusfontsize=13
 IconTitleSize=13
 ```
 
-## 下载 wine
-- macOS
-  - https://github.com/Gcenx/macOS_Wine_builds/releases
-  - https://www.playonlinux.com/wine/binaries/phoenicis/staging-darwin-amd64/
-  - https://www.playonlinux.com/wine/binaries/phoenicis/upstream-darwin-amd64/
-  - https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-x86on64/
-  - https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-amd64 crossover version wine
-
-  - curl -sL https://www.playonlinux.com/wine/binaries/phoenicis/staging-darwin-amd64/ | grep 'href=' | awk -F "href='" '{print $2}' | grep 'PlayOnLinux' | awk -F "'>" '{print $1}' | sort -h | grep -vE "wine-[1-5]"
-- Linux
-  - https://github.com/Kron4ek/Wine-Builds/releases
-  - https://github.com/varmd/wine-wayland
-  - https://www.playonlinux.com/wine/binaries/phoenicis/upstream-linux-amd64/ 稳定版本 非最新
-  - https://www.playonlinux.com/wine/binaries/phoenicis/upstream-linux-x86/ 含最新版本 似乎是只能运行 x86 程序 可以在 X64 系统运行
-  - https://www.playonlinux.com/wine/binaries/phoenicis/staging-linux-x86/
-  - https://www.playonlinux.com/wine/binaries/phoenicis/cx-linux-amd64/ crossover version wine 比较老
-
 alias winegui='wine explorer /desktop=DockerDesktop,1024x768'
 
-## 修复 编译最新版本
-- https://github.com/Castro-Fidel/PortProton_PKGBUILD
+[appwiz.cpl/0]
+Path=appwiz.cpl
+Name=添加/删除程序
+Description=允许您安装新软件，或从您的计算机删除现有的软件。
+Icon=C:\windows\ControlPanelDB\appwiz.ico
+[inetcpl.cpl/0]
+Path=inetcpl.cpl
+Name=Internet 设置
+Description=配置 Wine Internet Explorer 以及相关设置
+Icon=C:\windows\ControlPanelDB\inetcpl.ico
+[joy.cpl/0]
+Path=joy.cpl
+Name=游戏控制器
+Description=测试和配置游戏控制器。
+Icon=C:\windows\ControlPanelDB\joy.xpm
+
+
+[DxvkFiles]
+"C:\\windows\\system32\\dxgi.dll" = "f46b2e823575fef7b8e0c8c5e8f70cde"
+"C:\\windows\\system32\\d3d9.dll" = "cc626766ef4538482280982ddde5cf2b"
+"C:\\windows\\system32\\d3d11.dll" = "23d2805d66f6d575f84e414143d3dbb1"
+"C:\\windows\\system32\\d3d10.dll" = "beb3c3cf6faa44b5393ca4ba8443de83"
+"C:\\windows\\system32\\d3d10_1.dll" = "37508ffde46d9efb0b1bee87a7583df4"
+"C:\\windows\\system32\\d3d10core.dll" = "514d8837b1f923017f6fe9c00eb468b9"
+"C:\\windows\\syswow64\\dxgi.dll" = "1d264ea82b657c2930c5d1ccdae6933d"
+"C:\\windows\\syswow64\\d3d9.dll" = "d669f7ff6efa84ce831232e89fa81a17"
+"C:\\windows\\syswow64\\d3d11.dll" = "5d02fc456a7044496fee484e1af4d366"
+"C:\\windows\\syswow64\\d3d10.dll" = "5fab06d4ffbcaeed3e5b0f77fa030b33"
+"C:\\windows\\syswow64\\d3d10_1.dll" = "baf660861c0443749d94f77c406a8b8d"
+"C:\\windows\\syswow64\\d3d10core.dll" = "bd8581e44e9ccbb3e5034ed3451b925a"
+
+winetricks -q winxp
+winetricks -q sound=pulse
+winetricks -q d3dx9
+winetricks -q directplay
+wine explorer /desktop=DockerDesktop,1024x768
+
+## Packages
+- xauth
+- xvfb
+- x11vnc
+- x11-utils
+- x11-xserver-utils
+- xdotool
+- pulseaudio
+- pulseaudio-server
+- pulseaudio-utils
+- alsa-utils
+
+ENTRYPOINT ["tini", "--", "xvfb-run", "-a", "wine", "./MyServer.exe"]
+
+https://cdn.steamstatic.com/client/steam_cmd_linux
+
+    && sed -i "s/^.*PasswordAuthentication.*$/PasswordAuthentication no/" /etc/ssh/sshd_config \
+    && sed -i "s/^.*X11Forwarding.*$/X11Forwarding yes/" /etc/ssh/sshd_config \
+    && sed -i "s/^.*X11UseLocalhost.*$/X11UseLocalhost no/" /etc/ssh/sshd_config \
+    && grep "^X11UseLocalhost" /etc/ssh/sshd_config || echo "X11UseLocalhost no" >> /etc/ssh/sshd_config
+
+winetricks galliumnine
+
+ado
+msado15.dll
+
+ole db
+msdaps.dll
+msdasql.dll
+oledb32.dll
+
+Internet Explorer
+iexplore.exe
+
+Windows Media Player
+wmplayer.exe
+
+Windows NT/Accessories/wordpad.exe
+
+.Net Framework
+v1.1.4322
+v2.0.50727
+v3.0
+v3.5
+v4.0.30319
+
+< ./system32/libvkd3d-1.dll
+< ./system32/libvkd3d-shader-1.dll
+< ./syswow64/libvkd3d-1.dll
+< ./syswow64/libvkd3d-shader-1.dll
+
+control-panel.db
+

@@ -2,10 +2,10 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-07-22 01:57:44
- # @LastEditTime: 2023-10-12 20:32:01
+ # @LastEditTime: 2025-12-08 20:33:10
  # @LastEditors: Cloudflying
  # @Description: Linux + Android + Wine = Lanex
-### 
+###
 
 # Windows Application Launcher
 # Run Windows Application With Wine
@@ -38,12 +38,6 @@ export WINEPREFIX=${BOTTLES_DIR}/Win10ProX64
 # set wine windows system version
 # wine winecfg -v win10
 # PROTON_ENABLE_NVAPI=1 DXVK_ASYNC=1 ENABLE_VKBASALT=1 LFX=1 GAMEMODERUN %command%
-
-_install()
-{
-	sudo pacman -S --noconfirm wine vkd3d wine-gecko wine-mono lib32-vkd3d winetricks
-}
-
 
 if [[ -n "$(command -v wine64)" ]]; then
 	_wine='wine64'
