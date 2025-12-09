@@ -2,6 +2,7 @@
 
 `wine msiexec /i whatever.msi`
 
+## 路径
 wine winepath -u 'c:\windows\system32'
 
 ## 注册表
@@ -171,11 +172,4 @@ v2.0.50727
 v3.0
 v3.5
 v4.0.30319
-
-< ./system32/libvkd3d-1.dll
-< ./system32/libvkd3d-shader-1.dll
-< ./syswow64/libvkd3d-1.dll
-< ./syswow64/libvkd3d-shader-1.dll
-
-control-panel.db
 

@@ -2,11 +2,11 @@
 ###
  # @Author: Cloudflying
  # @Date: 2022-07-22 02:32:31
- # @LastEditTime: 2023-10-13 23:14:31
+ # @LastEditTime: 2025-12-09 13:28:19
  # @LastEditors: Cloudflying
- # @Description: 
+ # @Description:
  # @FilePath: /winx/init.sh
-### 
+###
 
 pacman -S wine \
 	wine-gecko \
@@ -22,8 +22,17 @@ pacman -S wine \
 	lib32-mangohud \
 	lib32-vkd3d \
 	lib32-vulkan-icd-loader \
-	linux-steam-integration
+  lib32-libcups # 打印机
 
+# 音频
+# ALSA
+pacman -S --noconfirm lib32-alsa-lib lib32-alsa-plugins
+# PulseAudio
+# pacman -S --noconfirm pulseaudio pulseaudio-alsa pulseaudio-bluetooth lib32-libpulse
+
+pacman -S --noconfirm lib32-gnutls lib32-gst-plugins-base lib32-gst-plugins-good
+# aur
+pacman -S --noconfirm lib32-sdl2
 # aur wine-osu wine-valve
 
 # 中文字体
@@ -42,6 +51,9 @@ _winetricks()
 winetricks sound=pulse
 winetricks cmd
 winetricks corefonts
+
+# hdmi
+winetricks gmdls
 
 _winetricks "Installing .NET 2.0"   -q dotnet20
 _winetricks "Installing .NET 3.0"   -q dotnet30sp1

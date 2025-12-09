@@ -1,72 +1,36 @@
-## Wine Build Release
-- https://github.com/lutris/wine 7.2-2
-- https://github.com/adolfintel/wined3d4win Build Script
-- https://github.com/AXErunners/electrum-axe-winebuild Build
-- https://github.com/Castro-Fidel/wine_builds
+## App Awesome
+- https://appdb.winehq.org/
 
+## Wine Build Release
+- https://github.com/Castro-Fidel/wine_builds
+- https://github.com/bottlesdevs/components/releases
 - https://github.com/topics/wine
 - https://github.com/KhronosGroup/Vulkan-Headers
 - https://github.com/KhronosGroup/SPIRV-Headers
-- Plyonlinux
-- Bottles
+- [Bottles](https://github.com/bottlesdevs)
 - [lutris](https://github.com/lutris/lutris)
-- https://appdb.winehq.org/
 - https://github.com/simons-public/protonfixes
-- https://github.com/ValveSoftware/steam-audio
-- https://github.com/ValveSoftware/steam-runtime
+
 - https://github.com/ValveSoftware/GameNetworkingSockets
 
 ## 下载 wine
 - macOS
   - https://github.com/Gcenx/macOS_Wine_builds/releases
-  - https://www.playonlinux.com/wine/binaries/phoenicis/staging-darwin-amd64/
-  - https://www.playonlinux.com/wine/binaries/phoenicis/upstream-darwin-amd64/
-  - https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-x86on64/
-  - https://www.playonlinux.com/wine/binaries/phoenicis/cx-darwin-amd64 crossover version wine
-
-  - curl -sL https://www.playonlinux.com/wine/binaries/phoenicis/staging-darwin-amd64/ | grep 'href=' | awk -F "href='" '{print $2}' | grep 'PlayOnLinux' | awk -F "'>" '{print $1}' | sort -h | grep -vE "wine-[1-5]"
 - Linux
   - https://github.com/Kron4ek/Wine-Builds/releases
   - https://github.com/varmd/wine-wayland
-  - https://www.playonlinux.com/wine/binaries/phoenicis/upstream-linux-amd64/ 稳定版本 非最新
-  - https://www.playonlinux.com/wine/binaries/phoenicis/upstream-linux-x86/ 含最新版本 似乎是只能运行 x86 程序 可以在 X64 系统运行
-  - https://www.playonlinux.com/wine/binaries/phoenicis/staging-linux-x86/
-  - https://www.playonlinux.com/wine/binaries/phoenicis/cx-linux-amd64/ crossover version wine 比较老
 
 ## Asgard
 https://github.com/lutris/asgard
 使用 Docker 在现代系统上运行 Loki Games 和其他 Linux 经典游戏。
-
-## CrossOver
-- https://www.codeweavers.com/xml/versions/cxmac.xml
-- https://media.codeweavers.com/pub/crossover/cxmac/demo/crossover-23.5.0.zip
-- https://media.codeweavers.com/pub/crossover/cxlinux/demo/crossover_25.1.0-1.deb
-- https://media.codeweavers.com/pub/crossover/source/crossover-sources-23.5.0.tar.gz
-- https://github.com/bottlesdevs/components/releases
 
 ### Mesa3D (2020 年更新)
 - https://downloads.fdossena.com/Projects/Mesa3D/Builds/
 - https://fdossena.com/?p=mesa/index.frag
 - Mesa3D 可用于为 OpenGL 应用程序提供软件渲染器。它对于运行使用旧版本 OpenGL 并且在现代硬件上无法正常工作的旧应用程序和游戏特别有用。
 
-### vkd3d
-
-- https://github.com/ValveSoftware/vkd3d
-- 3D graphics library built on top of Vulkan. but not identical, to Direct3D 12.
-
 ### d3d_extras
-
 - 微软的 D3DX，D3DCOMPILER 等 DLL
-
-### DXVK (Wine 8 似乎默认就有了)
-
-- https://github.com/doitsujin/dxvk
-- https://ftp.codeweavers.com/pub/crossover/dxvk/dxvk-1.10.3-1_x86.tar.xz
-- https://ftp.codeweavers.com/pub/crossover/dxvk/dxvk-1.10.3-1_x86_64.tar.xz
-- https://github.com/doitsujin/dxvk/releases/download/v2.3/dxvk-2.3.tar.gz
-- https://github.com/doitsujin/dxvk/releases/download/v2.3/dxvk-native-2.3-steamrt-sniper.tar.gz
-- Wine 中高性能运行 DX9/10/11 游戏
-- Vulkan-based implementation of D3D9, D3D10 and D3D11 for Linux / Wine
 
 ### Proton
 - https://github.com/ValveSoftware/Proton
@@ -93,13 +57,11 @@ https://github.com/lutris/asgard
 - https://github.com/Frogging-Family/wine-tkg-git
 - https://github.com/Joshua-Ashton/dxup
 - https://github.com/AlpyneDreams/d8vk
-- https://github.com/Gcenx/WineskinServer
 - https://github.com/GabrielMajeri/d3d9-to-11
 - https://github.com/AlpyneDreams/d8vk
 - https://github.com/ValveSoftware/steam-runtime
 - https://github.com/jordansissel/xdotool
 - https://github.com/topics/wine
-- https://ftp.codeweavers.com/pub/crossover/tie/crossover.tie.gz
 - https://github.com/doitsujin/dxvk-ags
 - https://github.com/ishitatsuyuki/LatencyFleX
 - https://github.com/Saancreed/wine-nvml
@@ -109,10 +71,8 @@ https://github.com/lutris/asgard
 - https://github.com/DadSchoorse/vkBasalt
 - https://github.com/simons-public/protonfixes
 - https://github.com/pchome/click2pain
-- https://github.com/lutris/vkd3d
 - https://www.reddit.com/r/wine_gaming/comments/8vf1ka/what_is_wine_esync_and_how_should_i_set_it_up/
 - https://github.com/lutris/docs/tree/master
-- https://github.com/wine-staging/wine-staging
 - https://forums.lutris.net/t/i-dont-know-how-to-get-wine-esync/17954
 - https://github.com/ptitSeb/box86
 - https://github.com/search?q=wine-osu&type=repositories
@@ -133,10 +93,6 @@ https://github.com/lutris/asgard
 - https://github.com/bottlesdevs/winebridge/releases/download/1.1.0/WineBridge-eb78a75.tar.xz
 - https://www.cabextract.org.uk/cabextract-1.9.1.tar.gz
 - https://github.com/wummel/patool
-
-## Docs
-- https://media.codeweavers.com/pub/crossover/docs/en/userguide-crossover-linux-23.pdf
-- https://media.codeweavers.com/pub/crossover/docs/en/userguide-crossover-mac-23.pdf
 
 - https://media.codeweavers.com/pub/other/sourcescfont3.exe
 - https://media.codeweavers.com/pub/other/cnfontsetup3.exe
@@ -165,23 +121,9 @@ https://github.com/bottlesdevs/wine/releases/download/soda-7.0-9/soda-7.0-9-x86_
 https://github.com/bottlesdevs/wine/releases/download/caffe-7.20/caffe-7.20-x86_64.tar.xz
 https://github.com/bottlesdevs/wine/releases/download/21.2.0-cx/vaniglia-21.2.0-cx-x86_64.tar.gz
 
-# Note that DXVK and vkd3d-proton are not included in my wine-proton builds.
-https://github.com/Kron4ek/Wine-Builds/releases/download/proton-8.0-4/wine-proton-8.0-4-amd64.tar.xz
-https://github.com/Kron4ek/Wine-Builds/releases/download/proton-8.0-4/wine-proton-8.0-4-x86.tar.xz
-
-# https://github.com/Kron4ek/Wine-Builds
-https://github.com/Kron4ek/Wine-Builds/releases/download/8.17/wine-8.17-amd64.tar.xz
-https://github.com/Kron4ek/Wine-Builds/releases/download/8.17/wine-8.17-staging-amd64.tar.xz
-https://github.com/Kron4ek/Wine-Builds/releases/download/8.17/wine-8.17-staging-tkg-amd64.tar.xz
-
 # https://github.com/varmd/wine-wayland
 # Wine-wayland allows playing DX9/DX11 and Vulkan games using pure wayland and Wine/DXVK.
 https://github.com/varmd/wine-wayland/releases/tag/v8.2.1
-
-# https://github.com/lutris/wine
-https://github.com/lutris/wine/releases/download/lutris-wine-7.2-2/wine-lutris-7.2-2-x86_64.tar.xz
-
-https://github.com/GloriousEggroll/wine-ge-custom/releases/download/GE-Proton8-17/wine-lutris-GE-Proton8-17-x86_64.tar.xz
 https://github.com/GloriousEggroll/proton-ge-custom/releases/download/GE-Proton8-16/GE-Proton8-16.tar.gz
 https://github.com/Castro-Fidel/wine_builds/releases/download/WINE_LOL_GE_8.12/WINE_LOL_GE_8.12.tar.xz
 https://github.com/Castro-Fidel/wine_builds/releases/download/plugins_v12/plugins_v12.tar.xz
@@ -190,35 +132,25 @@ https://github.com/Castro-Fidel/wine_builds/releases/download/PROTON_STEAM_8.0-2
 https://github.com/Castro-Fidel/wine_builds/releases/download/PROTON_LG_8-9/PROTON_LG_8-9.tar.xz
 https://github.com/Castro-Fidel/wine_builds/releases/download/PROTON_GE_8-2/PROTON_GE_8-2.tar.xz
 
-https://github.com/Castro-Fidel/vulkan/releases/download/vkd3d-proton-1.1-3622/vkd3d-proton-1.1-3622.tar.xz
-
-
-# macOS
-# Wine By Crossover
-# https://github.com/Gcenx/winecx
-- https://github.com/Gcenx/winecx/releases/download/crossover-wine-22.1.1/wine-crossover-22.1.1-osx64.tar.xz
-
-# https://github.com/Gcenx/macOS_Wine_builds
-
-
 ## components
-
-- vkd3d https://dl.winehq.org/vkd3d/
-- https://github.com/HansKristian-Work/vkd3d-proton
-- https://github.com/doitsujin/dxvk
 - https://github.com/Kron4ek/FAudio-Builds
 - https://github.com/FNA-XNA/FAudio
 - https://github.com/iXit/wine-nine-standalone
 - https://github.com/z0z0z/mf-install
 
-## assets
-
+## CrossOver
+- https://www.codeweavers.com/xml/versions/cxmac.xml
+- https://media.codeweavers.com/pub/crossover/cxmac/demo/crossover-23.5.0.zip
+- https://media.codeweavers.com/pub/crossover/cxlinux/demo/crossover_25.1.0-1.deb
+- https://media.codeweavers.com/pub/crossover/source/crossover-sources-23.5.0.tar.gz
+## 优化 配置数据
 - https://media.codeweavers.com/pub/crossover/cxfixes/cxfixes.xml.gz
+## Docs
+- https://media.codeweavers.com/pub/crossover/docs/en/userguide-crossover-linux-23.pdf
+- https://media.codeweavers.com/pub/crossover/docs/en/userguide-crossover-mac-23.pdf
+### Blacklist
+- https://ftp.codeweavers.com/pub/crossover/tie/crossover.tie.gz
 
-## Wine Build
-
-- https://www.playonlinux.com/wine/
-- macOS Build
-- https://github.com/Gcenx/macOS_Wine_builds/releases
-- Linux Build
-- https://github.com/Kron4ek/Wine-Builds
+## Library
+- https://github.com/ValveSoftware/steam-audio
+- https://github.com/ValveSoftware/steam-runtime
